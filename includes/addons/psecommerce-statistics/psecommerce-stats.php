@@ -9,7 +9,7 @@ Author: DerN3rd
 load_plugin_textdomain('mp_st', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 /* Runs when plugin is activated */
-register_activation_hook(__FILE__,'mp_st_install'); 
+register_activation_hook(__FILE__, 'mp_st_install'); 
 
 /* Runs on plugin deactivation*/
 register_deactivation_hook( __FILE__, 'mp_st_remove' );
@@ -23,7 +23,7 @@ function mp_st_remove() {
 add_action('admin_menu', 'mp_st_admin_menu');
 
 function mp_st_admin_menu() {
-  add_menu_page( __('Verkaufsstatistik', 'mp_st'), __('Shopstatistik', 'mp_st'), 'administrator', 'mp_st', 'mp_st_page', 'dashicons-analytics', 100.33 );
+  add_dashboard_page( __('Verkaufsstatistik', 'mp_st'), __('Shopstatistik', 'mp_st'), 'administrator', 'mp_st', 'mp_st_page', 'dashicons-analytics', 100.33 );
 }
 
 function mp_st_page() {
@@ -389,20 +389,20 @@ function mp_st_page() {
       <td style="width: 300px; vertical-align: top; text-align: center; color: #222;">
       	<div id="BigText" style="width: 300px; padding: 20px;">
       		<p><?php _e("Einnahmen dieses Monats:", "mp_st"); ?></p>
-      		<p><strong><?php echo $mp->format_currency('', mp_st_stat('-0 months', total, false)); ?></strong></p>
+      		<p><strong><?php echo $mp->mp_format_currency('', mp_st_stat('-0 months', total, false)); ?></strong></p>
       		<p style="border-top: 1px solid #dedede;"><?php _e("Die Verkäufe dieses Monats:", "mp_st"); ?></p>
       		<p><strong><?php echo mp_st_stat('-0 months', count, false); ?> <?php _e('Verkäufe', 'mp_st'); ?>, <?php echo mp_st_stat_items('-0 months', total, false); ?> <?php _e('Artikel', 'mp_st'); ?></strong></p>
       		<p>(<?php _e('Durchschnitt von', 'mp_st'); ?> <?php echo number_format(mp_st_stat_items('-0 months', average, false), 2, '.', ''); ?> <?php _e('Artikel pro Verkauf', 'mp_st'); ?>)</p>
             <p style="border-top: 1px solid #dedede;"><?php _e("Durchschnitt dieses Monats:", "mp_st"); ?></p>
-            <p><strong><?php echo $mp->format_currency('', mp_st_stat('-0 months', average, false)); ?>/<?php _e('Umsatz', 'mp_st'); ?></strong></p>
+            <p><strong><?php echo $mp->mp_format_currency('', mp_st_stat('-0 months', average, false)); ?>/<?php _e('Umsatz', 'mp_st'); ?></strong></p>
 
       		<p style="border-top: 2px solid #333;"><?php _e('Gesamtumsatz:', 'mp_st'); ?></p>
-      		<p><strong><?php echo $mp->format_currency('', $totalitytotal); ?></strong></p>
+      		<p><strong><?php echo $mp->mp_format_currency('', $totalitytotal); ?></strong></p>
       		<p style="border-top: 1px solid #dedede;"><?php _e('Gesamtumsatz:', 'mp_st'); ?></p>
       		<p><strong><?php echo $totalitycount; ?> <?php _e('Verkäufe', 'mp_st'); ?>, <?php echo $totalityitemstotal; ?> <?php _e('Artikel', 'mp_st'); ?></strong></p>
       		<p>(<?php _e('Durchschnitt von', 'mp_st'); ?> <?php echo number_format($totalityitemsaverage, 2, '.', ''); ?> <?php _e('Artikel pro Bestellung', 'mp_st'); ?>)</p>
             <p style="border-top: 1px solid #dedede;"><?php _e('Gesamtdurchschnitt/Verkauf:', 'mp_st'); ?></p>
-            <p><strong><?php echo $mp->format_currency('', $totalityaverage); ?></strong></p>      	</div>
+            <p><strong><?php echo $mp->mp_format_currency('', $totalityaverage); ?></strong></p>      	</div>
       </td>
     </tr>
   </table>

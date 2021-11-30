@@ -222,7 +222,7 @@ class PSeCommerce {
 			'labels'             => array(
 				'name'               => __( 'Produkte', 'mp' ),
 				'singular_name'      => __( 'Produkt', 'mp' ),
-				'menu_name'          => __( 'Shop', 'mp' ),
+				'menu_name'          => __( 'Shop-Board', 'mp' ),
 				'all_items'          => __( 'Produkte', 'mp' ),
 				'add_new'            => __( 'Neues Produkt hinzufügen', 'mp' ),
 				'add_new_item'       => __( 'Neues Produkt hinzufügen', 'mp' ),
