@@ -755,7 +755,7 @@ the specific language governing permissions and limitations under the Apache Lic
 
             // Waiting for a click event on touch devices to select option and hide dropdown
             // otherwise click will be triggered on an underlying element
-            this.dropdown.on("click", this.bind(function (event) {
+            this.dropdown.on('click', this.bind(function (event) {
                 if (this._touchEvent) {
                     this._touchEvent = false;
                     this.selectHighlighted();
