@@ -437,7 +437,7 @@ class MP_Admin_Multisite {
 			'page_slugs'       => array( 'network-shop-einstellungen' ),
 			'title'            => __( 'Theme Berechtigungen', 'mp' ),
 			'site_option_name' => 'mp_network_settings',
-			'desc'             => __( 'Festlegen von Theme-Zugriffsberechtigungen für Netzwerkspeicher. Speichere für ein benutzerdefiniertes CSS-Thema Deine CSS-Datei mit dem Header <strong> PSeCommerce Theme: NAME </strong> im Ordner <strong> /psecommerce/ui/themes/ </strong>, damit es in dieser Liste angezeigt wird.', 'mp' ),
+			'desc'             => __( 'Festlegen von Theme-Zugriffsberechtigungen für Netzwerkspeicher. Speichere für ein benutzerdefiniertes CSS-Thema Deine CSS-Datei mit dem Header <strong> PSeCommerce Theme: NAME </strong> im Ordner <strong> wp-content/psecommerce-styles/ </strong>, damit es in dieser Liste angezeigt wird. Erfahre <a href="https://n3rds.work/docs/psecommerce-theme-erstellen/"target=_blank">hier</a> mehr', 'mp' ),
 			'order'            => 15,
 		) );
 
