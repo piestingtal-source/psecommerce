@@ -531,7 +531,7 @@ class MP_Installer {
 	 */
 	public function add_menu_items() {
 		if ( get_option( 'mp_db_update_required' ) || mp_get_get_value( 'force_upgrade', 0 ) == 1 ) {
-			add_submenu_page( 'shop-einstellungen', __( 'Update Data', 'mp' ), __( 'Update Data', 'mp' ), 'activate_plugins', 'mp-db-update', array(
+			add_submenu_page( 'shop-einstellungen', __( 'Daten aktualisieren', 'mp' ), __( 'Daten aktualisieren', 'mp' ), 'activate_plugins', 'mp-db-update', array(
 				&$this,
 				'db_update_page',
 			) );
@@ -654,7 +654,7 @@ class MP_Installer {
 					}
 					?>
 					<p class="submit"><input class="button-primary" type="submit"
-											 value="<?php _e( 'Perform Update', 'mp' ); ?>"></p>
+											 value="<?php _e( 'Aktualisierung durchführen', 'mp' ); ?>"></p>
 				</form>
 				<?php
 			} else {
