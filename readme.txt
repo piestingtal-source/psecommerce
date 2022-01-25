@@ -4,7 +4,7 @@ Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free
 Tags: ecommerce, onlineshop, multisite
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 1.5.3
+Stable tag: 3.5.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,7 +62,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 
 == ChangeLog ==
 
-= 1.5.4 = DerN3rd =
+= 3.5.4 = DerN3rd =
 
 * Fix Depracated .ready(function)
 * Fix Depracated .bind/.unbind
@@ -73,7 +73,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Fix Deprecated .size()
 * Fix Deprecated .andSelf()
 
-= 1.5.3 = DerN3rd =
+= 3.5.3 = DerN3rd =
 
 * Facebook Button Code erneuert
 * Shopfilter Dropdowns das mitscrollen abgewöhnt$(function() {
@@ -81,7 +81,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Mit Code-Säuberung begonnen
 * Entwicklerhilfen hinzugefügt
 
-= 1.5.2 = DerN3rd =
+= 3.5.2 = DerN3rd =
 
 * Neues Icon für Shop-Einstellungen
 * Bessere Position für Shop-Einstellungen Menü im Dashboard
@@ -94,7 +94,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Hilfesektion verbessert
 * PSource Updater v1.1 integriert
 
-= 1.5.1 = DerN3rd =
+= 3.5.1 = DerN3rd =
 
 * Fixes deprecated create_function
 * CSS Anpassung Lightbox (Adminbar-Versetzung)
@@ -102,32 +102,32 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Verbesserungen der Texte & Korrekturen
 * Der Shortcode-Builder ist nun etwas verständlicher
 
-= 1.4.9 = DerN3rd =
+= 3.4.9 = DerN3rd =
 
 * Es können jetzt Gratis-Downloads zum direkten Herunterladen angeboten werden
 
-= 1.4.7 = DerN3rd =
+= 3.4.7 = DerN3rd =
 
 * PSeCommerce-Frontend ist nun ein eigenständiges Plugin
 * Erweiterung für Statisik eingefügt
 * Weitere Anpassungen auf PhP7.5
 
-= 1.4.6 = DerN3rd =
+= 3.4.6 = DerN3rd =
 
 * Wir haben an der Performance-Schraube gedreht
 * Weiteren veralteten Code überarbeitet
 * Verbesserte Übersetzungen und Texte
 
-= 1.4.1 = DerN3rd =
+= 3.4.1 = DerN3rd =
 * Fixed: Angebotspreise akzeptieren nun das eingestellte Start/Enddatum
 
-= 1.4.0 = DerN3rd =
+= 3.4.0 = DerN3rd =
 * Update: jQuery für WordPress 5.5
 
-= 1.3.9 = DerN3rd =
+= 3.3.9 = DerN3rd =
 * Update: jQuery Bibliotheken
 
-= 1.3.8 = DerN3rd =
+= 3.3.8 = DerN3rd =
 * Neu: In der Erweiterung PDF Rechnung können nun Rechtliche Hinweise und Kontaktdaten angegeben werden
 * Fixed: Probleme bei der Darstellung der PDF Rechnungen
 * Übersetzungen: Weiter verbessert, Übersetzungsstand 80%
@@ -135,8 +135,8 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Neu: Erstelle eigene CSS Files um Deinem Shop ein einzigartiges Aussehen zu verpassen
 * Neu: Erweiterung eingefügt um Produkt-Kommentare zu erlauben
 
-= 1.3.5 = DerN3rd =
+= 3.3.5 = DerN3rd =
 * Fixed: Übersetzungen
 
-= 1.0.0 =
+= 3.0.0 =
 * Initial release
