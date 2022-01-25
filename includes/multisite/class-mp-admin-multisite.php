@@ -186,7 +186,7 @@ class MP_Admin_Multisite {
 	/**
 	 * Display global currency information
 	 *
-	 * @since 3.1.3
+	 * @since 1.1.3
 	 * @access public
 	 */
 	public function init_global_currency_metabox(){
@@ -633,7 +633,7 @@ class MP_Admin_Multisite {
 	public function __call( $method, $args ) {
 		switch ( $method ) {
 			case 'is_main_site' :
-				_deprecated_function( $method, '3.0', 'mp_is_main_site' );
+				_deprecated_function( $method, '1.0', 'mp_is_main_site' );
 
 				return call_user_func_array( 'mp_is_main_site', $args );
 				break;
@@ -647,7 +647,7 @@ class MP_Admin_Multisite {
 	/**
 	 * Update blog_public state to 1 on blog status change
 	 *
-	 * @since 3.1.2
+	 * @since 1.1.2
 	 * @access public
 	 *
 	 */

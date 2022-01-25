@@ -7,7 +7,7 @@ class MP_Public {
 	 * Refers to the store page types that PSeCommerce uses
 	 *12.3.20 mp_agb (mp-agb) eingefügt, php template noch erstellen dazu. 
 	 *Übersetzungen verbessern, sonst fein. DN
-	 * @since 3.2.5
+	 * @since 1.2.5
 	 * @access public
 	 * @var array
 	 */
@@ -74,7 +74,7 @@ class MP_Public {
 	/**
 	 * Add DONOTCACHEPAGE constant on all MP pages.
 	 *
-	 * @since 3.2.9
+	 * @since 1.2.9
 	 */
 	public function disable_caching() {
 		$post_type = MP_Product::get_post_type();
@@ -206,7 +206,7 @@ class MP_Public {
     /**
 	 * Checks if page is a Product or one of the Store Pages
 	 *
-	 * @since 3.2.5
+	 * @since 1.2.5
 	 * @access public
 	 *
 	 * @param int/WP_Post $page

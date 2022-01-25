@@ -5,7 +5,7 @@
  *
  * @author Paul Kevin
  *
- * @since 3.2.4
+ * @since 1.2.4
  * @class MP_Multi_File_Download_Addon
  */
 
@@ -52,7 +52,7 @@ class MP_Multi_File_Download_Addon {
 	/**
 	* Set the file type when Addon is enabled
 	*
-	* @since 3.2.4
+	* @since 1.2.4
 	* @param String $type - The current file type
 	*
 	* @return String
@@ -67,7 +67,7 @@ if ( ! function_exists( 'mp_multi_file_download_addon' ) ) :
 	/**
 	* Get the MP_Multi_File_Download_Addon instance
 	*
-	* @since 3.2.4
+	* @since 1.2.4
 	* @return MP_Multi_File_Download_Addon
 	*/
 	function mp_multi_file_download_addon() {

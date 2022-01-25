@@ -359,7 +359,7 @@ class MP_Installer {
 		}
 
 		$old_version = get_option( 'mp_previous_version' );
-		if ( version_compare( $old_version, '3.0.0.3', '<=' ) || mp_get_post_value( 'force_upgrade', 0 ) ) {
+		if ( version_compare( $old_version, '1.0.0.3', '<=' ) || mp_get_post_value( 'force_upgrade', 0 ) ) {
 			$update_fix_needed = true;
 		} else {
 			$update_fix_needed = false;
@@ -396,7 +396,7 @@ class MP_Installer {
 			$post_id = get_the_ID();
 
 			$variations = get_post_meta( $post_id, 'mp_var_name', true );
-			if ( $variations && is_array( $variations ) && true == $update_fix_needed ) {//need update since it used mp_var_name post meta which is not used in the 3.0 version
+			if ( $variations && is_array( $variations ) && true == $update_fix_needed ) {//need update since it used mp_var_name post meta which is not used in the 1.0 version
 				if ( count( $variations ) > 1 ) {
 					//It's a variation product
 
@@ -472,7 +472,7 @@ class MP_Installer {
 				//Update sales count
 				$this->update_sales_count( $post_id );
 
-			} else { //update for 3.0 and 3.0.0.1
+			} else { //update for 1.0 and 1.0.0.1
 				$post_thumbnail = get_post_thumbnail_id( $post_id );
 				if ( is_numeric( $post_thumbnail ) ) {
 					update_post_meta( $post_id, 'mp_product_images', $post_thumbnail );
@@ -608,7 +608,7 @@ class MP_Installer {
 
 			<?php
 			$old_version = get_option( 'mp_previous_version' );
-			if ( version_compare( $old_version, '3.0.0.3', '<=' ) || mp_get_post_value( 'force_upgrade', 0 ) ) {
+			if ( version_compare( $old_version, '1.0.0.3', '<=' ) || mp_get_post_value( 'force_upgrade', 0 ) ) {
 				$update_fix_needed = true;
 			} else {
 				$update_fix_needed = false;
@@ -724,36 +724,36 @@ class MP_Installer {
 				$this->update_2923();
 			}
 
-			//3.0 update
-			if ( version_compare( $old_version, '3.0.0.2', '<' ) || ( false !== $force_version && version_compare( $force_version, '3.0.0.2', '<' ) ) ) {
+			//1.0 update
+			if ( version_compare( $old_version, '1.0.0.2', '<' ) || ( false !== $force_version && version_compare( $force_version, '1.0.0.2', '<' ) ) ) {
 				$settings = $this->update_3000( $settings );
 			}
 
-			//3.0.0.3 need data from 3.0
-			if ( ( version_compare( $old_version, '3.0.0.3', '<' ) || ( false !== $force_version && version_compare( $force_version, '3.0.0.3', '<' ) ) ) ) {
+			//1.0.0.3 need data from 1.0
+			if ( ( version_compare( $old_version, '1.0.0.3', '<' ) || ( false !== $force_version && version_compare( $force_version, '1.0.0.3', '<' ) ) ) ) {
 				$settings = $this->update_3003( $settings );
 				update_option( 'mp_settings', $settings );
 				//we will remove the mp_db_update_required, so user can re run the wizard
 				update_option( 'mp_db_update_required', 1 );
 			}
 
-			//3.0 update
-			if ( version_compare( $old_version, '3.0.0.8', '<' ) || ( false !== $force_version && version_compare( $force_version, '3.0.0.8', '<' ) ) ) {
+			//1.0 update
+			if ( version_compare( $old_version, '1.0.0.8', '<' ) || ( false !== $force_version && version_compare( $force_version, '1.0.0.8', '<' ) ) ) {
 				$settings = $this->update_3007( $settings );
 			}
 
-			//3.0 update
-			if ( version_compare( $old_version, '3.1.3', '<' ) || ( false !== $force_version && version_compare( $force_version, '3.1.3', '<' ) ) ) {
+			//1.0 update
+			if ( version_compare( $old_version, '1.1.3', '<' ) || ( false !== $force_version && version_compare( $force_version, '1.1.3', '<' ) ) ) {
 				$settings = $this->update_312( $settings );
 			}
 
-			// 3.2.5 update.
-			if ( version_compare( $old_version, '3.2.6', '<' ) || ( false !== $force_version && version_compare( $force_version, '3.2.6', '<' ) ) ) {
+			// 1.2.5 update.
+			if ( version_compare( $old_version, '1.2.6', '<' ) || ( false !== $force_version && version_compare( $force_version, '1.2.6', '<' ) ) ) {
 				$this->update_326();
 			}
 
-			// 3.2.8 update.
-			if ( version_compare( $old_version, '3.2.8', '<' ) || ( false !== $force_version && version_compare( $force_version, '3.2.8', '<' ) ) ) {
+			// 1.2.8 update.
+			if ( version_compare( $old_version, '1.2.8', '<' ) || ( false !== $force_version && version_compare( $force_version, '1.2.8', '<' ) ) ) {
 				$this->upgrade_328();
 			}
 		} // End if().
@@ -893,7 +893,7 @@ class MP_Installer {
 	/**
 	 * Creates a backup of the mp_settings and mp_coupons options.
 	 *
-	 * In the event that a user needs to rollback to a plugin version < 3.0 this data can be used to restore legacy settings.
+	 * In the event that a user needs to rollback to a plugin version < 1.0 this data can be used to restore legacy settings.
 	 *
 	 * @since 1.0
 	 * @access public
@@ -935,7 +935,7 @@ class MP_Installer {
 	}
 
 	/**
-	 * When user run into this upgrade, which mean we already having the 3.0.0.2 upgrade
+	 * When user run into this upgrade, which mean we already having the 1.0.0.2 upgrade
 	 */
 	public function update_3003( $settings ) {
 		//update missing shipping data
@@ -978,7 +978,7 @@ class MP_Installer {
 			foreach ( $methods as $use ) {
 				if ( isset( $data[ $use ] ) ) {
 					//this mean the old data uses this
-					//convert to 3.0 key
+					//convert to 1.0 key
 					$use_30 = str_replace( '-', '_', $use );
 					switch ( $use_30 ) {
 						case 'table_rate':
@@ -1029,11 +1029,11 @@ class MP_Installer {
 		}
 		$current_gateways = mp_get_setting( 'gateways->allowed', array() );
 		/**
-		 * if client upgrade from < 3.0, the allowed will not same format like 3.0,
+		 * if client upgrade from < 1.0, the allowed will not same format like 1.0,
 		 * so we have to check
 		 */
 		if ( count( array_diff( $old_gateways, $current_gateways ) ) == 0 ) {
-			//this is from below 3.0
+			//this is from below 1.0
 			$current_gateways = array_combine( array_values( $old_gateways ), array_values( $old_gateways ) );
 			foreach ( $current_gateways as $key => $val ) {
 				$new_key                      = str_replace( '-', '_', $key );
@@ -1290,7 +1290,7 @@ class MP_Installer {
 	}
 
 	/**
-	 * Runs on 3.1.2 update.
+	 * Runs on 1.1.2 update.
 	 *
 	 * @since 1.0
 	 * @access public
@@ -1306,7 +1306,7 @@ class MP_Installer {
 	}
 
 	/**
-	 * Runs on 3.0.0.7 update.
+	 * Runs on 1.0.0.7 update.
 	 *
 	 * @since 1.0
 	 * @access public
@@ -1322,7 +1322,7 @@ class MP_Installer {
 	}
 
 	/**
-	 * Runs on 3.0 update.
+	 * Runs on 1.0 update.
 	 *
 	 * @since 1.0
 	 * @access public
@@ -1343,7 +1343,7 @@ class MP_Installer {
 			$settings['currency'] = 'TRY';
 		}
 
-		//set theme to new default 3.0 theme
+		//set theme to new default 1.0 theme
 		$settings['store_theme'] = 'default';
 
 		return $settings;
@@ -1396,11 +1396,11 @@ class MP_Installer {
 	}
 
 	/**
-	 * Update to version 3.2.6.
+	 * Update to version 1.2.6.
 	 *
 	 * Fixes problem with sorting variable products and missing sort_price.
 	 *
-	 * @since 3.2.6
+	 * @since 1.2.6
 	 * @access private
 	 */
 	private function update_326() {
@@ -1427,11 +1427,11 @@ class MP_Installer {
 
 
 	/**
-	 * Update to version 3.2.8.
+	 * Update to version 1.2.8.
 	 *
 	 * Adds enabled options for sending all notification types.
 	 *
-	 * @since 3.2.8
+	 * @since 1.2.8
 	 * @access private
 	 */
 	private function upgrade_328() {

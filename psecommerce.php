@@ -3,7 +3,7 @@
  * Plugin Name: PSeCommerce
  * Plugin URI:  https://n3rds.work/piestingtal_source/psecommerce-shopsystem/
  * Description: Das einfachste und dennoch mächtigste WordPress-E-Commerce-Plugin - Ob kleiner Onlineshop, Digitales Schaufenster, funktioniert auch perfekt mit BuddyPress und Multisite, um einen sozialen Marktplatz zu schaffen, auf dem Du einen Prozentsatz nehmen kannst! Aktiviere das Plugin, passe Deine Einstellungen an und füge Deinem Shop einige Produkte hinzu.
- * Version:     3.5.3
+ * Version:     1.5.3
  * Author:      DerN3rd (WMS N3rds@Work)
  * Author URI:  https://n3rds.work
  * Text Domain: mp
@@ -35,7 +35,7 @@ $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 
-define( 'MP_VERSION', '3.5.3' );
+define( 'MP_VERSION', '1.5.3' );
 
 /**
  * Hauptklasse PSeCommerce.
@@ -781,7 +781,7 @@ class PSeCommerce {
 	/**
 	 * Add rewrite rules.
 	 *
-	 * @since  3.0
+	 * @since  1.0
 	 * @access public
 	 * @uses   $wp_rewrite
 	 * @param  array $rewrite_rules  Rewrite rules.
@@ -842,7 +842,7 @@ class PSeCommerce {
 	/**
 	 * Add custom query vars
 	 *
-	 * @since  3.0
+	 * @since  1.0
 	 * @access public
 	 * @param  array $vars  Variables.
 	 * @filter query_vars
@@ -861,7 +861,7 @@ class PSeCommerce {
 	/**
 	 * Make sure images use https protocol when displaying content over ssl.
 	 *
-	 * @since  3.0
+	 * @since  1.0
 	 * @access public
 	 * @param  string $url      URL.
 	 * @param  int    $post_id  Post Id.
@@ -900,7 +900,7 @@ class PSeCommerce {
 	/**
 	 * Get user billing info.
 	 *
-	 * Before 3.0 only shipping info was captured. This function will return the
+	 * Before 1.0 only shipping info was captured. This function will return the
 	 * shipping info if billing info doesn't exist for the given user.
 	 *
 	 * @since 1.0
@@ -1020,61 +1020,61 @@ class PSeCommerce {
 	public function __call( $method, $args ) {
 		switch ( $method ) {
 			case 'display_currency' :
-				_deprecated_function( $method, '3.0', 'mp_display_currency' );
+				_deprecated_function( $method, '1.0', 'mp_display_currency' );
 
 				return call_user_func_array( 'mp_display_currency', $args );
 				break;
 
 			case 'get_download_url' :
-				_deprecated_function( $method, '3.0', 'MP_Product::download_url' );
+				_deprecated_function( $method, '1.0', 'MP_Product::download_url' );
 				$product = new MP_Product( $args[0] );
 
 				return $product->download_url( $args[1], false );
 				break;
 
 			case 'mail' :
-				_deprecated_function( $method, '3.0', 'mp_send_email' );
+				_deprecated_function( $method, '1.0', 'mp_send_email' );
 
 				return call_user_func_array( 'mp_send_email', $args );
 				break;
 
 			case 'order_notification' :
-				_deprecated_function( $method, '3.0', 'MP_Order::send_notifications' );
+				_deprecated_function( $method, '1.0', 'MP_Order::send_notifications' );
 				$order = new MP_Order( $args[0] );
 				$order->send_notifications();
 				break;
 
 			case 'get_order' :
-				_deprecated_function( $method, '3.0', 'MP_Order' );
+				_deprecated_function( $method, '1.0', 'MP_Order' );
 				break;
 
 			case 'low_stock_notification' :
-				_deprecated_function( $method, '3.0', 'MP_Product::low_stock_notification' );
+				_deprecated_function( $method, '1.0', 'MP_Product::low_stock_notification' );
 				break;
 
 			case 'create_order' :
-				_deprecated_function( $method, '3.0', 'MP_Order::save' );
+				_deprecated_function( $method, '1.0', 'MP_Order::save' );
 				break;
 
 			case 'generate_order_id' :
-				_deprecated_function( $method, '3.0', 'MP_Order::get_id' );
+				_deprecated_function( $method, '1.0', 'MP_Order::get_id' );
 				$order = new MP_Order();
 
 				return $order->get_id();
 				break;
 
 			case 'cart_checkout_error' :
-				_deprecated_function( $method, '3.0', 'MP_Checkout::add_error OR MP_Checkout::get_error' );
+				_deprecated_function( $method, '1.0', 'MP_Checkout::add_error OR MP_Checkout::get_error' );
 				break;
 
 			case 'is_valid_zip' :
-				_deprecated_function( $method, '3.0', 'mp_is_valid_zip' );
+				_deprecated_function( $method, '1.0', 'mp_is_valid_zip' );
 
 				return call_user_func_array( 'mp_is_valid_zip', $args );
 				break;
 
 			case 'coupon_applicable' :
-				_deprecated_function( $method, '3.0', 'MP_Coupon::is_applicable' );
+				_deprecated_function( $method, '1.0', 'MP_Coupon::is_applicable' );
 				$is_applicable = false;
 
 				if ( class_exists( 'MP_Coupon' ) ) {
@@ -1086,7 +1086,7 @@ class PSeCommerce {
 				break;
 
 			case 'download_only_cart' :
-				//_deprecated_function( $method, '3.0', 'MP_Cart::is_download_only' );
+				//_deprecated_function( $method, '1.0', 'MP_Cart::is_download_only' );
 				$cart = MP_Cart::get_instance();
 				$cart->set_id( $args[0] );
 				$is_download_only = $cart->is_download_only();
@@ -1096,44 +1096,44 @@ class PSeCommerce {
 				break;
 
 			case 'get_setting' :
-				_deprecated_function( $method, '3.0', 'mp_get_setting' );
+				_deprecated_function( $method, '1.0', 'mp_get_setting' );
 
 				return call_user_func_array( 'mp_get_setting', $args );
 				break;
 
 			case 'format_currency' :
-				_deprecated_function( $method, '3.0', 'mp_format_currency' );
+				_deprecated_function( $method, '1.0', 'mp_format_currency' );
 
 				return call_user_func_array( 'mp_format_currency', $args );
 				break;
 
 			case 'format_date' :
-				_deprecated_function( $method, '3.0', 'mp_format_date' );
+				_deprecated_function( $method, '1.0', 'mp_format_date' );
 
 				return call_user_func_array( 'mp_format_date', $args );
 				break;
 
 			case 'product_excerpt' :
-				_deprecated_function( $method, '3.0', 'mp_product_excerpt' );
+				_deprecated_function( $method, '1.0', 'mp_product_excerpt' );
 
 				return call_user_func_array( 'mp_product_excerpt', $args );
 				break;
 
 			case 'product_price' :
-				_deprecated_function( $method, '3.0', 'mp_product_price' );
+				_deprecated_function( $method, '1.0', 'mp_product_price' );
 
 				return call_user_func_array( 'mp_product_price', $args );
 				break;
 
 			case 'shipping_price' :
-				_deprecated_function( $method, '3.0', 'MP_Cart::shipping_total' );
+				_deprecated_function( $method, '1.0', 'MP_Cart::shipping_total' );
 				$mp_cart = mp_cart();
 
 				return call_user_func_array( array( $mp_cart, 'shipping_total' ), $args );
 				break;
 
 			case 'tax_price' :
-				_deprecated_function( $method, '3.0', 'MP_Cart::tax_total' );
+				_deprecated_function( $method, '1.0', 'MP_Cart::tax_total' );
 				$mp_cart = mp_cart();
 
 				return call_user_func_array( array( $mp_cart, 'tax_total' ), $args );

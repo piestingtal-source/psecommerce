@@ -145,7 +145,7 @@ if ( ! function_exists( 'mp_product_price' ) ) :
 
 		$product = new MP_Product( $post_id );
 
-		$label = ( $label === true ) ? __( 'Preis: ', 'mp' ) : $label; //should be empty from 3.0
+		$label = ( $label === true ) ? __( 'Preis: ', 'mp' ) : $label; //should be empty from 1.0
 
 		$price_html .= $product->display_price( false );
 
@@ -771,7 +771,7 @@ if ( ! function_exists( 'mp_buy_button' ) ) :
 	 * @param int $post_id The post_id for the product. Optional if in the loop.
 	 */
 	function mp_buy_button( $echo = true, $context = 'list', $product_id = null ) {
-		//_deprecated_function( 'mp_buy_button', '3.0', 'MP_Product::buy_button' );
+		//_deprecated_function( 'mp_buy_button', '1.0', 'MP_Product::buy_button' );
 
 		$product = new MP_Product( $product_id );
 		if ( ! $product->exists() ) {
@@ -2247,7 +2247,7 @@ if ( ! function_exists( 'mp_pinit_button' ) ) :
 	 * @param bool $echo
 	 */
 	function mp_pinit_button( $product_id = null, $context = 'single_view', $echo = false ) {
-		_deprecated_function( 'mp_pinit_button', '3.0', 'MP_Product::pinit_button()' );
+		_deprecated_function( 'mp_pinit_button', '1.0', 'MP_Product::pinit_button()' );
 
 		$product = new MP_Product( $product_id );
 		$snippet = $product->pinit_button( $context, false );
@@ -2737,7 +2737,7 @@ if ( ! function_exists( 'mp_product_excerpt' ) ) :
 	 * @return string
 	 */
 	function mp_product_excerpt( $excerpt, $content, $product_id, $excerpt_more = null ) {
-		_deprecated_function( 'mp_product_excerpt', '3.0', 'MP_Product::excerpt()' );
+		_deprecated_function( 'mp_product_excerpt', '1.0', 'MP_Product::excerpt()' );
 		$product = new MP_Product( $product_id );
 
 		return $product->excerpt( $excerpt_more, $excerpt, $content );
@@ -2757,7 +2757,7 @@ if ( ! function_exists( 'mp_product_image' ) ) :
 	 */
 
 	function mp_product_image( $echo = true, $context = 'list', $post_id = null, $size = null, $align = null ) {
-		_deprecated_function( 'mp_product_image', '3.0', 'MP_Product::image()' );
+		_deprecated_function( 'mp_product_image', '1.0', 'MP_Product::image()' );
 
 		$product = new MP_Product( $post_id );
 		//$image	 = MP_Product::image( false, $context, $size, $align );
@@ -2948,7 +2948,7 @@ if ( ! function_exists( 'mp_province_field' ) ) :
 	 */
 
 	function mp_province_field( $country = 'US', $selected = null ) {
-		_deprecated_function( 'mp_province_field', '3.0', 'MP_Checkout::province_field' );
+		_deprecated_function( 'mp_province_field', '1.0', 'MP_Checkout::province_field' );
 	}
 
 endif;
@@ -2967,7 +2967,7 @@ if ( ! function_exists( 'mp_related_products' ) ) :
 	 * @param bool $simple_list Optional, whether to show the related products based on the "list_view" setting or as a simple unordered list.
 	 */
 	function mp_related_products() {
-		_deprecated_function( 'mp_related_products', '3.0', 'MP_Product::related_products()' );
+		_deprecated_function( 'mp_related_products', '1.0', 'MP_Product::related_products()' );
 
 		$defaults = array(
 			'product_id'  => null,

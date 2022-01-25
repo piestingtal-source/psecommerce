@@ -224,7 +224,7 @@ class MP_Checkout {
 	/**
 	 * Felder für Adressnamen abrufen
 	 *
-	 * @since 3.2.7
+	 * @since 1.2.7
 	 * @access public
 	 * @param string $type Entweder Rechnung oder Versand.
 	 * @return array
@@ -250,7 +250,7 @@ class MP_Checkout {
 	/**
 	 * Adressfelder abrufen
 	 *
-	 * @since 3.2.7
+	 * @since 1.2.7
 	 * @access public
 	 * @param string $type Entweder Rechnung oder Versand.
 	 * @return array
@@ -475,7 +475,7 @@ class MP_Checkout {
 	 * Filter für Details-Sammlung als Nur Kontaktdaten in den digitalen Einstellungen festlegen
 	 * Gutes Beispiel für die Anpassung von Adressfeldern auf der Checkout-Seite
 	 *
-	 * @since 3.2.7
+	 * @since 1.2.7
 	 * @access public
 	 * @param array $address_fields Die aktuellen Adressfelder
 	 * @param string $type Entweder Rechnung oder Versand.
@@ -705,7 +705,7 @@ class MP_Checkout {
 			/**
 			* Filtere die erforderlichen Felder
 			*
-			* @since 3.2.7
+			* @since 1.2.7
 			* @param array $required_fields Benötigte Felder.
 			* @param string $type Entweder Rechnung oder Versand.
 			*/

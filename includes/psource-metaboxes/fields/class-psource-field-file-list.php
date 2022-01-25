@@ -45,7 +45,7 @@ class PSOURCE_Field_File_List extends PSOURCE_Field {
 	public function enqueue_scripts() {
 		wp_enqueue_script('media-upload');
 
-		// 3.5 media gallery
+		// 1.5 media gallery
 		if ( function_exists('wp_enqueue_media') && ! did_action('wp_enqueue_media') ) {
             wp_enqueue_media();
 		}
@@ -54,7 +54,7 @@ class PSOURCE_Field_File_List extends PSOURCE_Field {
 	/**
 	 * Print necessary field javascript.
 	 *
-	 * @since 3.2.4
+	 * @since 1.2.4
 	 * @access public
 	 */
 	public function print_scripts() {
@@ -128,7 +128,7 @@ class PSOURCE_Field_File_List extends PSOURCE_Field {
 	/**
 	 * Displays the field.
 	 *
-	 * @since 3.2.4
+	 * @since 1.2.4
 	 * @access public
 	 * @param int $post_id
 	 */

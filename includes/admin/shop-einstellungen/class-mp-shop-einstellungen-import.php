@@ -2,7 +2,7 @@
 /**
  * Class MP_Shop_Einstellungen_Import
  *
- * @since   3.2.3
+ * @since   1.2.3
  * @package PSeCommerce
  */
 
@@ -17,7 +17,7 @@ class MP_Shop_Einstellungen_Import {
 	/**
 	 * Refers to a single instance of the class
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 * @access  private
 	 * @var     object
 	 */
@@ -26,7 +26,7 @@ class MP_Shop_Einstellungen_Import {
 	/**
 	 * Constructor function
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 * @access  private
 	 */
 	private function __construct() {
@@ -49,7 +49,7 @@ class MP_Shop_Einstellungen_Import {
 	 * a taxonomy (usually there is one for tags and categories) - we pass it on to WordPress importer. If no
 	 * texonomy is found, that means it is an attribute for a variable product and we need to add it manually.
 	 *
-	 * @since  3.2.4
+	 * @since  1.2.4
 	 * @param  array $terms  Array of WP_Term objects.
 	 * @return array $terms  Array of WP_Term objects.
 	 */
@@ -84,7 +84,7 @@ class MP_Shop_Einstellungen_Import {
 	 * During import these posts will be treated as duplicates and not be imported. We need to manually add them
 	 * to the database.
 	 *
-	 * @since  3.2.4
+	 * @since  1.2.4
 	 * @param  int   $post_exists  Post ID, or 0 if post did not exist.
 	 * @param  array $post         The post array to be inserted.
 	 * @return int   $post_exists  Post ID, or 0 if post did not exist.
@@ -103,7 +103,7 @@ class MP_Shop_Einstellungen_Import {
 	/**
 	 * Process attributes for variable products.
 	 *
-	 * @since  3.2.4
+	 * @since  1.2.4
 	 * @param  array  $metakeys  Post meta data.
 	 * @param  int    $post_id   Post ID.
 	 * @return array
@@ -131,7 +131,7 @@ class MP_Shop_Einstellungen_Import {
 	/**
 	 * Gets the single instance of the class
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 * @return  object
 	 */
 	public static function get_instance() {
@@ -144,7 +144,7 @@ class MP_Shop_Einstellungen_Import {
 	/**
 	 * Process import/export form actions
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 */
 	public static function process_form() {
 		if ( ! empty( $_POST['mp-store-exporter'] ) ) { // Input var okay.
@@ -190,7 +190,7 @@ class MP_Shop_Einstellungen_Import {
 	 * Location settings, tax settings, currency settings, digital settings, download settings, miscellaneous settings
 	 * and advanced settings.
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 * @access  private
 	 * @param   string $option_name Where to find the plugin settings. Default 'mp_settings'.
 	 * @return  string
@@ -214,7 +214,7 @@ class MP_Shop_Einstellungen_Import {
 	 * First check if the WordPress importer is installed and activated. If not activated - we activate it and run it.
 	 * If not install, we redirect to installation.
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 * @access  private
 	 * @param   string $importer Slug for the importer. Default 'wordpress-importer'.
 	 * @param   string $importer_name Name of the importer. Default 'WordPress'.
@@ -275,7 +275,7 @@ class MP_Shop_Einstellungen_Import {
 	/**
 	 * Prepare header for export.
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 * @access  private
 	 */
 	private static function prepare_heder() {
@@ -306,7 +306,7 @@ class MP_Shop_Einstellungen_Import {
 	/**
 	 * Display import/export page
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 */
 	public function display_settings() {
 		$options = base64_encode( $this->get_settings() );
@@ -356,7 +356,7 @@ class MP_Shop_Einstellungen_Import {
 		/**
 		 * Fires at the beginning of an export, before any headers are sent.
 		 *
-		 * @since 2.3.0
+		 * @since 1.3.0
 		 *
 		 * @param array $args An array of export arguments.
 		 */
@@ -490,7 +490,7 @@ function wxr_term_meta( $term ) {
 /**
  * Output list of authors with posts
  *
- * @since 3.1.0
+ * @since 1.1.0
  *
  * @global wpdb $wpdb WordPress database abstraction object.
  *
@@ -528,7 +528,7 @@ function wxr_authors_list( array $post_ids = null ) {
 /**
  * Output list of market press product attributes in XML tag format
  *
- * @since 3.2.4
+ * @since 1.2.4
  */
 /*
 function wxr_product_attributes() {
@@ -550,7 +550,7 @@ function wxr_product_attributes() {
 /**
  * Output list of taxonomy terms, in XML tag format, associated with a post
  *
- * @since 2.3.0
+ * @since 1.3.0
  */
 function wxr_post_taxonomy() {
 	$post = get_post();
@@ -690,7 +690,7 @@ echo '<?xml version="1.0" encoding="' . get_bloginfo('charset') . "\" ?>\n"; ?>
 							 * Returning a truthy value to the filter will skip the current meta
 							 * object from being exported.
 							 *
-							 * @since 3.3.0
+							 * @since 1.3.0
 							 *
 							 * @param bool   $skip     Whether to skip the current post meta. Default false.
 							 * @param string $meta_key Current meta key.

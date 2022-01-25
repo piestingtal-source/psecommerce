@@ -499,7 +499,7 @@ class MP_Multisite {
 	 * @deprecated
 	 */
 	public function _index_content() {
-		_deprecated_function( 'deprecated from 3.0.0.3', '3.0.0.3' );
+		_deprecated_function( 'deprecated from 1.0.0.3', '1.0.0.3' );
 		//build an index with the whole site
 
 		$categories = array();

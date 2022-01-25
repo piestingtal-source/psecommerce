@@ -97,12 +97,12 @@ class MP_Order {
 	}
 
 	/**
-	 * Convert legacy cart info from orders created in < 3.0
+	 * Convert legacy cart info from orders created in < 1.0
 	 *
 	 * @since 1.0
 	 * @access protected
 	 *
-	 * @param array $items Cart info from an order created in < 3.0.
+	 * @param array $items Cart info from an order created in < 1.0.
 	 *
 	 * @return MP_Cart
 	 */
@@ -288,22 +288,22 @@ class MP_Order {
 			$msg     = mp_filter_email( $this, nl2br( stripslashes( mp_get_setting( 'email->'.$notification_kind.'->text' ) ) ) );
 
 			if ( has_filter( 'mp_order_notification_subject' ) ) {
-				//trigger_error( 'The <strong>mp_order_notification_subject</strong> hook has been replaced with <strong>mp_order/notification_subject</strong> as of MP 3.0', E_USER_ERROR );
-				error_log( 'The <strong>mp_order_notification_subject</strong> hook has been replaced with <strong>mp_order/notification_subject</strong> as of MP 3.0' );
+				//trigger_error( 'The <strong>mp_order_notification_subject</strong> hook has been replaced with <strong>mp_order/notification_subject</strong> as of MP 1.0', E_USER_ERROR );
+				error_log( 'The <strong>mp_order_notification_subject</strong> hook has been replaced with <strong>mp_order/notification_subject</strong> as of MP 1.0' );
 
 				return false;
 			}
 
 			if ( has_filter( 'mp_order_notification_body' ) ) {
-				//trigger_error( 'The <strong>mp_order_notification_body</strong> hook has been replaced with <strong>mp_order/notification_body</strong> as of MP 3.0', E_USER_ERROR );
-				error_log( 'The <strong>mp_order_notification_body</strong> hook has been replaced with <strong>mp_order/notification_body</strong> as of MP 3.0' );
+				//trigger_error( 'The <strong>mp_order_notification_body</strong> hook has been replaced with <strong>mp_order/notification_body</strong> as of MP 1.0', E_USER_ERROR );
+				error_log( 'The <strong>mp_order_notification_body</strong> hook has been replaced with <strong>mp_order/notification_body</strong> as of MP 1.0' );
 
 				return false;
 			}
 
 			if ( has_filter( 'mp_order_notification_' . mp_get_post_value( 'payment_method', '' ) ) ) {
-				//trigger_error( 'The <strong>mp_order_notification_' . mp_get_post_value( 'payment_method', '' ) . '</strong> hook has been replaced with <strong>mp_order/notification_body/' . mp_get_post_value( 'payment_method', '' ) . '</strong> as of MP 3.0', E_USER_ERROR );
-				error_log( 'The <strong>mp_order_notification_' . mp_get_post_value( 'payment_method', '' ) . '</strong> hook has been replaced with <strong>mp_order/notification_body/' . mp_get_post_value( 'payment_method', '' ) . '</strong> as of MP 3.0' );
+				//trigger_error( 'The <strong>mp_order_notification_' . mp_get_post_value( 'payment_method', '' ) . '</strong> hook has been replaced with <strong>mp_order/notification_body/' . mp_get_post_value( 'payment_method', '' ) . '</strong> as of MP 1.0', E_USER_ERROR );
+				error_log( 'The <strong>mp_order_notification_' . mp_get_post_value( 'payment_method', '' ) . '</strong> hook has been replaced with <strong>mp_order/notification_body/' . mp_get_post_value( 'payment_method', '' ) . '</strong> as of MP 1.0' );
 
 				return false;
 			}
@@ -386,15 +386,15 @@ class MP_Order {
 			$msg     = nl2br( stripslashes( mp_get_setting( 'email->'.$notification_kind.'->text' ) ) );
 
 			if ( has_filter( 'mp_shipped_order_notification_subject' ) ) {
-				trigger_error( 'The <strong>mp_shipped_order_notification_subject</strong> hook has been replaced with <strong>mp_order/shipment_notification_subject</strong> as of MP 3.0', E_USER_ERROR );
+				trigger_error( 'The <strong>mp_shipped_order_notification_subject</strong> hook has been replaced with <strong>mp_order/shipment_notification_subject</strong> as of MP 1.0', E_USER_ERROR );
 			}
 
 			if ( has_filter( 'mp_shipped_order_notification_body' ) ) {
-				trigger_error( 'The <strong>mp_shipped_order_notification_body</strong> hook has been replaced with <strong>mp_order/shipment_notification_body</strong> as of MP 3.0', E_USER_ERROR );
+				trigger_error( 'The <strong>mp_shipped_order_notification_body</strong> hook has been replaced with <strong>mp_order/shipment_notification_body</strong> as of MP 1.0', E_USER_ERROR );
 			}
 
 			if ( has_filter( 'mp_shipped_order_notification' ) ) {
-				trigger_error( 'The <strong>mp_shipped_order_notification</strong> hook has been replaced with <strong>mp_order/shipment_notification</strong> as of MP 3.0', E_USER_ERROR );
+				trigger_error( 'The <strong>mp_shipped_order_notification</strong> hook has been replaced with <strong>mp_order/shipment_notification</strong> as of MP 1.0', E_USER_ERROR );
 			}
 
 			/**
@@ -1247,7 +1247,7 @@ class MP_Order {
 			update_post_meta( $item->ID, 'mp_sales_count', $count );
 
 			if ( has_filter( 'mp_product_sale' ) ) {
-				trigger_error( 'The <strong>mp_product_sale</strong> hook has been replaced by <strong>mp_order/product_sale</strong> as of MP 3.0.', E_USER_ERROR );
+				trigger_error( 'The <strong>mp_product_sale</strong> hook has been replaced by <strong>mp_order/product_sale</strong> as of MP 1.0.', E_USER_ERROR );
 			}
 
 			/**
@@ -1313,7 +1313,7 @@ class MP_Order {
 		}
 
 		if ( has_filter( 'mp_new_order' ) ) {
-			trigger_error( 'The <strong>mp_new_order</strong> hook has been replaced by <strong>mp_order/new_order</strong> as of MP 3.0.', E_USER_ERROR );
+			trigger_error( 'The <strong>mp_new_order</strong> hook has been replaced by <strong>mp_order/new_order</strong> as of MP 1.0.', E_USER_ERROR );
 		}
 
 		/**

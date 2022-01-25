@@ -4,7 +4,7 @@
  *
  * Class MP_GDPR
  *
- * @since 3.2.9
+ * @since 1.2.9
  *
  * @package PSeCommerce
  */
@@ -13,7 +13,7 @@
 /**
  * Class MP_GDPR is responsible for GDPR compliance
  *
- * @since 3.2.9
+ * @since 1.2.9
  */
 class MP_GDPR {
 

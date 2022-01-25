@@ -29,7 +29,7 @@ class PSOURCE_Field_Image extends PSOURCE_Field {
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'media-upload' );
 
-		// 3.5 media gallery
+		// 1.5 media gallery
 		if ( function_exists( 'wp_enqueue_media' ) && !did_action( 'wp_enqueue_media' ) ) {
 			wp_enqueue_media();
 		}

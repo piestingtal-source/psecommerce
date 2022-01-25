@@ -82,7 +82,7 @@ class MP_Products_Screen {
 	/**
 	 * Add a filter by category column on the product page
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 */
 	public function filter_by_category() {
 		global $typenow, $wp_query;
@@ -104,7 +104,7 @@ class MP_Products_Screen {
 	/**
 	 * Filter products by the selected category
 	 *
-	 * @since   3.2.3
+	 * @since   1.2.3
 	 * @param   object $query Query object.
 	 */
 	public function parse_category_filter_query( $query ) {
@@ -353,7 +353,7 @@ class MP_Products_Screen {
 	/**
 	 * Delete variations when deleting a product
 	 *
-	 * @since 3.1.3
+	 * @since 1.1.3
 	 * @access public
 	 * @action delete_post
 	 *

@@ -26,12 +26,12 @@ class MP_Prosites_Addon {
 	}
 
 	/**
-	 * Update pro levels keys when upgrading to 3.0+
+	 * Update pro levels keys when upgrading to 1.0+
 	 *
 	 * @since 1.0
 	 * @access protected
 	 *
-	 * @param array $pro_levels The current pro levels from < 3.0.
+	 * @param array $pro_levels The current pro levels from < 1.0.
 	 */
 	protected function _update_pro_levels( $pro_levels ) {
 		$settings = get_site_option( 'mp_network_settings', array() );
