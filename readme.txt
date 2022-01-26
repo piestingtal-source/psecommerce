@@ -72,11 +72,12 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Fix Deprecated jQuery.isArray
 * Fix Deprecated .size()
 * Fix Deprecated .andSelf()
+* Dashboard-Statistik um Quartalsdurchschnitt und Jahresdurchschnitt erweitert
 
 = 1.5.3 = DerN3rd =
 
 * Facebook Button Code erneuert
-* Shopfilter Dropdowns das mitscrollen abgewöhnt$(function() {
+* Shopfilter Dropdowns das mitscrollen abgewöhnt
 * Weitere Textanpassungen
 * Mit Code-Säuberung begonnen
 * Entwicklerhilfen hinzugefügt

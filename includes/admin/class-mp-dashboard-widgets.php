@@ -224,21 +224,23 @@ class MP_Dashboard_Widgets {
 	public function mp_store_report_display() {
 		global $wpdb;
 
-		$today_date			   = date( "Y-m-d", time() );
+		$today_date			 = date( "Y-m-d", time() );
 		$yesterday_date		 = date( "Y-m-d", time() - 60 * 60 * 24 );
 		$seven_days_date	 = date( "Y-m-d", time() - 60 * 60 * 24 * 7 );
 		$thirty_days_date	 = date( "Y-m-d", time() - 60 * 60 * 24 * 30 );
+		$ninty_days_date     = date( "Y-m-d", time() - 60 * 60 * 24 * 90 );
+		$year_days_date      = date( "Y-m-d", time() - 60 * 60 * 24 * 365 );
 
 		$day_current	 = date( 'd' );
-		$month_current = date( 'm' );
+		$month_current   = date( 'm' );
 		$year_current	 = date( 'Y' );
 
-		$today		   = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date LIKE '" . $year_current . "-" . $month_current . "-" . $day_current . "%' AND p.post_status != 'trash'" );
+		$today		 = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date LIKE '" . $year_current . "-" . $month_current . "-" . $day_current . "%' AND p.post_status != 'trash'" );
 		$yesterday	 = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date LIKE '" . $yesterday_date . "%' AND p.post_status != 'trash'" );
 		$seven_days	 = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date >= '" . $seven_days_date . "' AND p.post_status != 'trash'" );
 		$thirty_days = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date >= '" . $thirty_days_date . "' AND p.post_status != 'trash'" );
-		//$ninty_days  = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date >= '" . $ninty_days_date . "' AND p.post_status != 'trash'" );
-        //$year_days   = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date >= '" . $year_days_date . "' AND p.post_status != 'trash'" );
+		$ninty_days  = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date >= '" . $ninty_days_date . "' AND p.post_status != 'trash'" );
+        $year_days   = $wpdb->get_row( "SELECT count(p.ID) as count, sum(m.meta_value) as total, avg(m.meta_value) as average FROM $wpdb->posts p JOIN $wpdb->postmeta m ON p.ID = m.post_id WHERE p.post_type = 'mp_order' AND m.meta_key = 'mp_order_total' AND p.post_date >= '" . $year_days_date . "' AND p.post_status != 'trash'" );
 		?>
 		<p><span><?php _e( "Willkommen zurück! Hier ist eine kurze Zusammenfassung der Shopaktivitäten.", 'mp' ); ?></span></p>
 		<div class="main store-report">
@@ -264,6 +266,16 @@ class MP_Dashboard_Widgets {
 					<span class="mp-dashboard-square-amount"><?php echo mp_format_currency( '', $thirty_days->total ); ?></span>
 					<span class="mp-dashboard-square-footer"><?php echo $thirty_days->count . __( ' Bestellungen', 'mp' ); ?></span>
 				</div>
+				<div class="mp-dashboard-square mp-dashboard-right">
+					<span class="mp-dashboard-square-title"><?php _e( 'Quartals-Schnitt', 'mp' ); ?></span>
+					<span class="mp-dashboard-square-amount"><?php echo mp_format_currency( '', $ninty_days->total ); ?></span>
+					<span class="mp-dashboard-square-footer"><?php echo $ninty_days->count . __( ' Bestellungen', 'mp' ); ?></span>
+				</div>
+				<div class="mp-dashboard-square mp-dashboard-right">
+					<span class="mp-dashboard-square-title"><?php _e( 'Jahres-Schnitt', 'mp' ); ?></span>
+					<span class="mp-dashboard-square-amount"><?php echo mp_format_currency( '', $year_days->total ); ?></span>
+					<span class="mp-dashboard-square-footer"><?php echo $year_days->count . __( ' Bestellungen', 'mp' ); ?></span>
+				</div>
 			</div>
 
 			<?php
@@ -279,7 +291,7 @@ class MP_Dashboard_Widgets {
 
 			<div class="mp-dashboard-section-stock-orders">
 				<span class="mp-dashboard-stock-orders-title"><?php printf( _n( '%s Bestellung', '%s Bestellungen', $received_orders, 'mp' ), $received_orders ); ?></span>
-				<span class="mp-dashboard-stock-orders-subtitle"><?php _e( 'Empfangen', 'mp' ); ?></span>
+				<span class="mp-dashboard-stock-orders-subtitle"><?php _e( 'Eingegangen', 'mp' ); ?></span>
 			</div>
 			<div class="mp-dashboard-section-stock-orders">
 				<span class="mp-dashboard-stock-orders-title"><?php printf( _n( '%s Bestellung', '%s Bestellungen', $paid_orders, 'mp' ), $paid_orders ); ?></span>

@@ -34,6 +34,7 @@
     float: left;
     width: 45.8%;
     padding: 2%;
+    border-bottom: 1px solid #ccc;
 }
 
 .mp-dashboard-square:first-child{
