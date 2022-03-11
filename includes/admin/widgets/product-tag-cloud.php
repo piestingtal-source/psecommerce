@@ -5,7 +5,7 @@ class PSeCommerce_Tag_Cloud_Widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_tag_cloud mp_widget mp_widget_tag_cloud', 'description' => __( "Die am häufigsten verwendeten Produkt-Tags im Cloud-Format aus Deinem PSeCommerce-Shop.", 'mp' ) );
-		parent::__construct( 'mp_tag_cloud_widget', __( '(PSeCommerce) Tagwolke', 'mp' ), $widget_ops );
+		parent::__construct( 'mp_tag_cloud_widget', __( 'PSE Tagwolke', 'mp' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {

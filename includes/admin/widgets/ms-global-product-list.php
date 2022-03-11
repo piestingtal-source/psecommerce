@@ -13,7 +13,7 @@ if ( is_multisite() ) {
 				'classname'   => 'mp_widget mp_global_product_list_widget',
 				'description' => __( 'Zeigt eine anpassbare globale Liste von Produkten aus PSeCommerce-Shops im Netzwerk an.', 'mp' )
 			);
-			parent::__construct( 'mp_global_product_list_widget', __( 'Netzwerk Produktarchiv', 'mp' ), $widget_ops );
+			parent::__construct( 'mp_global_product_list_widget', __( 'PSE Netzwerkarchiv', 'mp' ), $widget_ops );
 		}
 
 		function widget( $args, $instance ) {

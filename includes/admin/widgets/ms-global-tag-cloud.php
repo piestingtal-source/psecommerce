@@ -10,9 +10,9 @@ if ( is_multisite() ) {
 
 		function __construct() {
 			$widget_ops = array( 'classname'   => 'mp_widget mp_global_tag_cloud_widget',
-			                     'description' => __( "Displays global most used product tags in cloud format from network PSeCommerce stores.", 'mp' )
+			                     'description' => __( "Zeigt die weltweit am häufigsten verwendeten Produkt-Tags im Cloud-Format aus Netzwerk-PSeCommerce-Shops an.", 'mp' )
 			);
-			parent::__construct( 'mp_global_tag_cloud_widget', __( 'Global Product Tag Cloud', 'mp' ), $widget_ops );
+			parent::__construct( 'mp_global_tag_cloud_widget', __( 'PSE Netzwerk-Tag-Cloud', 'mp' ), $widget_ops );
 		}
 
 		function widget( $args, $instance ) {
@@ -21,7 +21,7 @@ if ( is_multisite() ) {
 			if ( ! empty( $instance['title'] ) ) {
 				$title = $instance['title'];
 			} else {
-				$title = __( 'Global Product Tags', 'mp' );
+				$title = __( 'Globale Produkt-Tags', 'mp' );
 			}
 			$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
@@ -42,11 +42,11 @@ if ( is_multisite() ) {
 		}
 
 		function form( $instance ) {
-			$instance = wp_parse_args( (array) $instance, array( 'title'    => __( 'Global Product Tags', 'mp' ),
+			$instance = wp_parse_args( (array) $instance, array( 'title'    => __( 'Globale Produkt-Tags', 'mp' ),
 			                                                     'taxonomy' => 'product_tag'
 			) );
 			?>
-			<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'mp' ) ?></label>
+			<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Titel:', 'mp' ) ?></label>
 				<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
 				       name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php
 				if ( isset( $instance['title'] ) ) {

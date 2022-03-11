@@ -73,6 +73,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Fix Deprecated .size()
 * Fix Deprecated .andSelf()
 * Dashboard-Statistik um Quartalsdurchschnitt und Jahresdurchschnitt erweitert
+* Die Widgets werden jetzt übersichtlicher unter dem Kürzel "PSE-WIDGETNAME" gesammelt
 
 = 1.5.3 = DerN3rd =
 

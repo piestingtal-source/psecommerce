@@ -5,7 +5,7 @@ class PSeCommerce_Shopping_Cart_Widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops = array( 'classname' => 'mp_widget mp_widget_cart', 'description' => __( 'Zeigt dynamische Warenkorbinhalte zusammen mit einer Checkout-Schaltfläche für Deinen PSeCommerce-Shop an.', 'mp' ) );
-		parent::__construct( 'mp_cart_widget', __( '(PSeCommerce) Warenkorb', 'mp' ), $widget_ops );
+		parent::__construct( 'mp_cart_widget', __( 'PSE Warenkorb', 'mp' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {

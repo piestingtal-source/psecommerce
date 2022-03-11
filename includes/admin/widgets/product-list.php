@@ -5,7 +5,7 @@ class PSeCommerce_Product_List extends WP_Widget {
 
 	function __construct() {
 		$widget_ops = array( 'classname' => 'mp_widget mp_widget_products_list', 'description' => __( 'Zeigt eine anpassbare Liste von Produkten aus Deinem PSeCommerce-Shop an.', 'mp' ) );
-		parent::__construct( 'mp_product_list_widget', __( '(PSeCommerce) Produktliste', 'mp' ), $widget_ops );
+		parent::__construct( 'mp_product_list_widget', __( 'PSE Produktliste', 'mp' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {

@@ -5,7 +5,7 @@ class PSeCommerce_Categories_Widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_categories mp_widget mp_widget_product_categories', 'description' => __( "Eine Liste oder Dropdown-Liste von Shopkategorien aus Deinem PSeCommerce-Shop.", 'mp' ) );
-		parent::__construct( 'mp_categories_widget', __( '(PSeCommerce) Shopkategorien', 'mp' ), $widget_ops );
+		parent::__construct( 'mp_categories_widget', __( 'PSE Shopkategorien', 'mp' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
