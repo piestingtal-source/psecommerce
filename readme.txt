@@ -62,6 +62,10 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 
 == ChangeLog ==
 
+= 1.5.5 = DerN3rd =
+
+* PHP Deprecated:  implode() Fix
+
 = 1.5.4 = DerN3rd =
 
 * Fix Depracated .ready(function)
