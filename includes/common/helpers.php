@@ -222,45 +222,45 @@ if ( ! function_exists( 'mp_filter_email' ) ) :
 
 		// If actually shipped show method, else customer's shipping choice.
 		if ( $order->get_meta( 'mp_shipping_info->method' ) && $order->get_meta( 'mp_shipping_info->method' != 'other' ) ) {
-			$shipping_billing_info .= '<strong>' . __( 'Shipping Method:', 'mp' ) . '</strong> ' . $carrier;
+			$shipping_billing_info .= '<strong>' . __( 'Versandart:', 'mp' ) . '</strong> ' . $carrier;
 			// If using calculated shipping, show the carrier and shipping option selected
 		} elseif ( $order->get_meta( 'mp_shipping_info->shipping_sub_option' ) &&  !is_array( $order->get_meta( 'mp_shipping_info->shipping_option' ) ) ) {
-			$shipping_billing_info .= '<strong>' . __( 'Shipping Method:', 'mp' ) . '</strong> ' . strtoupper( $order->get_meta( 'mp_shipping_info->shipping_option' ) ) . ' ' . $order->get_meta( 'mp_shipping_info->shipping_sub_option' );
+			$shipping_billing_info .= '<strong>' . __( 'Versandart:', 'mp' ) . '</strong> ' . strtoupper( $order->get_meta( 'mp_shipping_info->shipping_option' ) ) . ' ' . $order->get_meta( 'mp_shipping_info->shipping_sub_option' );
 		} else {
-			$shipping_billing_info .= '<strong>' . __( 'Shipping Method:', 'mp' ) . '</strong> ' . $carrier;
+			$shipping_billing_info .= '<strong>' . __( 'Versandart:', 'mp' ) . '</strong> ' . $carrier;
 		}
 
 		if ( $order->get_meta( 'mp_shipping_info->tracking_num' ) ) {
-			$shipping_billing_info .= "<br /><strong>" . __( 'Tracking Number:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_shipping_info->tracking_num' );
+			$shipping_billing_info .= "<br /><strong>" . __( 'Trackingcode:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_shipping_info->tracking_num' );
 		}
 
 		// Special Instructions
 		if ( $order->get_meta( 'mp_shipping_info->special_instructions' ) ) {
-			$shipping_billing_info .= "<br /><strong>" . __( 'Special Instructions:', 'mp' ) . ':</strong>' . wordwrap( $order->get_meta( 'mp_shipping_info->special_instructions' ) );
+			$shipping_billing_info .= "<br /><strong>" . __( 'Spezielle Anweisungen:', 'mp' ) . ':</strong>' . wordwrap( $order->get_meta( 'mp_shipping_info->special_instructions' ) );
 		}
 
 		$order_notes = '';
 		if ( $order->get_meta( 'mp_order_notes' ) ) {
-			$order_notes = '<strong>' . __( 'Order Notes:', 'mp' ) . ':</strong>' . wordwrap( $order->get_meta( 'mp_order_notes' ) ) . "<br />\n";
+			$order_notes = '<strong>' . __( 'Bestellhinweise:', 'mp' ) . ':</strong>' . wordwrap( $order->get_meta( 'mp_order_notes' ) ) . "<br />\n";
 		}
 
 		// Payment Info
-		$payment_info = '<strong>' . __( 'Payment Method:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_payment_info->gateway_public_name' ) . "<br />\n";
+		$payment_info = '<strong>' . __( 'Zahlungsmethode:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_payment_info->gateway_public_name' ) . "<br />\n";
 
 		if ( $order->get_meta( 'mp_payment_info->method' ) ) {
-			$payment_info .= '<strong>' . __( 'Payment Type:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_payment_info->method' ) . "<br />\n";
+			$payment_info .= '<strong>' . __( 'Zahlungsart:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_payment_info->method' ) . "<br />\n";
 		}
 
 		if ( $order->get_meta( 'mp_payment_info->transaction_id' ) ) {
-			$payment_info .= '<strong>' . __( 'Transaction ID:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_payment_info->transaction_id' ) . "<br />\n";
+			$payment_info .= '<strong>' . __( 'Transaktions-ID:', 'mp' ) . '</strong> ' . $order->get_meta( 'mp_payment_info->transaction_id' ) . "<br />\n";
 		}
 
-		$payment_info .= '<strong>' . __( 'Payment Total:', 'mp' ) . '</strong> ' . mp_format_currency( $currency, $order->get_meta( 'mp_payment_info->total' ) ) . "<br /><br />\n";
+		$payment_info .= '<strong>' . __( 'Zahlungsbetrag:', 'mp' ) . '</strong> ' . mp_format_currency( $currency, $order->get_meta( 'mp_payment_info->total' ) ) . "<br /><br />\n";
 
 		if ( $order->post_status == 'order_paid' || $order->post_status == 'order_shipped' ) {
-			$payment_info .= __( 'Your payment for this order is complete.', 'mp' );
+			$payment_info .= __( 'Deine Zahlung für diese Bestellung ist abgeschlossen.', 'mp' );
 		} else {
-			$payment_info .= __( 'Your payment for this order is not yet complete. Here is the latest status:', 'mp' ) . "\n";
+			$payment_info .= __( 'Deine Zahlung für diese Bestellung ist noch nicht abgeschlossen. Hier der neuste Stand:', 'mp' ) . "\n";
 			$statuses = $order->get_meta( 'mp_payment_info->status' );
 			krsort( $statuses ); //sort with latest status at the top
 			$status    = reset( $statuses );

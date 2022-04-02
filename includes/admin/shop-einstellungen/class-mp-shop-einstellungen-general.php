@@ -618,16 +618,6 @@ class MP_Shop_Einstellungen_General {
 			),
 		) );
 
-		$metabox->add_field( 'text', array(
-				'name'		 => 'base_adress',
-				'label'		 => array( 'text' => __( 'Straße, Hausnummer', 'mp' ) ),
-				'custom'	 => array(
-					'style' => 'width:300px',
-				),
-				'validation' => array(
-					'required' => true,
-				),
-			) );
 	
 			$countries_without_postcode = array_keys( mp()->countries_no_postcode );
 			$metabox->add_field( 'text', array(
@@ -646,9 +636,10 @@ class MP_Shop_Einstellungen_General {
 					'required' => true,
 				),
 			) );
+			
 			$metabox->add_field( 'text', array(
-				'name'		 => 'base_city',
-				'label'		 => array( 'text' => __( 'Stadt/Ort', 'mp' ) ),
+				'name'		 => 'zip_label',
+				'label'		 => array( 'text' => __( 'Zip/Postal Code Label', 'mp' ) ),
 				'custom'	 => array(
 					'style' => 'width:300px',
 				),

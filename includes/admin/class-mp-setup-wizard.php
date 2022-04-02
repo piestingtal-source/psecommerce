@@ -364,7 +364,7 @@ class MP_Setup_Wizard {
 				),
 			) );
 
-			$metabox->add_field( 'text', array(
+			/*$metabox->add_field( 'text', array(
 				'name'		 => 'base_adress',
 				'label'		 => array( 'text' => __( 'Straße, Hausnummer', 'mp' ) ),
 				'custom'	 => array(
@@ -373,7 +373,7 @@ class MP_Setup_Wizard {
 				'validation' => array(
 					'required' => true,
 				),
-			) );
+			) );*/
 	
 			$countries_without_postcode = array_keys( mp()->countries_no_postcode );
 			$metabox->add_field( 'text', array(
@@ -392,11 +392,12 @@ class MP_Setup_Wizard {
 					'required' => true,
 				),
 			) );
+
 			$metabox->add_field( 'text', array(
-				'name'		 => 'base_city',
-				'label'		 => array( 'text' => __( 'Stadt/Ort', 'mp' ) ),
-				'custom'	 => array(
-					'style' => 'width:300px',
+				'name'       => 'zip_label',
+				'label'      => array( 'text' => __( 'Zip/Postal Code Label', 'mp' ) ),
+				'custom'     => array(
+					'style' => 'max-width: 300px',
 				),
 				'validation' => array(
 					'required' => true,

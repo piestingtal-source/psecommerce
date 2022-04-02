@@ -94,7 +94,7 @@ class PSOURCE_Field_Quick_Setup extends PSOURCE_Field {
 									</div><!-- end mp_tab_content_countries -->
 								</div><!-- end mp_tab_content -->
 								<div class="mp_tab_navigation">
-									<a href="#" class="button-secondary mp_button mp_button_tab_nav-next"><?php _e( 'WEITER', 'mp' ); ?></a>
+									<a href="#" class="button-secondary mp_button mp_button_tab_nav-next"><?php _e( 'Weiter', 'mp' ); ?></a>
 								</div><!-- end mp_tab_navigation -->
 							</div><!-- end mp-quick-setup-tab-locations -->
 
@@ -111,7 +111,7 @@ class PSOURCE_Field_Quick_Setup extends PSOURCE_Field {
 								</div><!-- end mp_tab_content -->
 								<div class="mp_tab_navigation">
 									<a href="#" class="button-secondary mp_button mp_button_tab_nav-prev"><?php _e( 'Zurück', 'mp' ); ?></a>
-									<a href="#" class="button-secondary mp_button mp_button_tab_nav-next"><?php _e( 'WEITER', 'mp' ); ?></a>
+									<a href="#" class="button-secondary mp_button mp_button_tab_nav-next"><?php _e( 'Weiter', 'mp' ); ?></a>
 								</div><!-- end mp_tab_navigation -->
 							</div><!-- end mp-quick-setup-tab-currency-and-tax -->
 
