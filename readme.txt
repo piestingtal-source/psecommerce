@@ -55,6 +55,11 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == Entwickler ==
 
+= HINWEIS = 
+
+Wir sind noch dabei die vollständige PhP8 Kompatibilität herzustellen, bei Problemen bitte auf PhP7 wechseln.
+Eure Unterstützung wird gern angenommen, wendet euch hierfür bitte an unsere [GitHub Projekt-Seite]([GitHub](https://github.com/piestingtal-source/psecommerce))
+
 PSeCommerce ist eine OpenSource Community-Software, beruhend auf dem Quellcode von MarketPress, welchem auch WooCommerce zugrunde liegt. 
 PSeCommerce wird von seiner Communty weiterentwickelt, auch Du kannst Dich z.B. auf GitHub gerne Beteiligen, besuche Doch einfach einmal unser [PSeCommerce Projektboard](https://github.com/piestingtal-source/psecommerce/projects). 
 Ob es gefundene Fehler sind, Idee, Verbesserungsvorschläge, Dein persönliches Theme, welches Du teilen möchtest, Du bist uns sicher Willkommen.
@@ -67,6 +72,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * PHP Deprecated:  implode() Fix
 * Fix: Setup-Wizard Falsche Fehlermeldung in den Standort-Einstellungen
 * PhP8 Fix Required parameter follows optional parameter
+* Fix: create_function
 
 = 1.5.4 = DerN3rd =
 

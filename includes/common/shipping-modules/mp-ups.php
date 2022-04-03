@@ -297,7 +297,8 @@ class MP_Shipping_UPS extends MP_Shipping_API_Calculated {
 	* rate_request - Makes the actual call to UPS
 	*/
 	function rate_request() {
-		$shipping_options = array_filter( $this->get_setting( 'services', array() ), create_function( '$val', 'return ($val == 1);' ) );
+		/*$shipping_options = array_filter( $this->get_setting( 'services', array() ), create_function( '$val', 'return ($val == 1);' ) );*/
+		$shipping_options = array_filter( $this->get_setting( 'services', array() ), function( $val ) {return ($val == 1);} );
 
 		//Assume equal size packages. Find the best matching box size
 		$boxes = (array) $this->get_setting( 'boxes' );
