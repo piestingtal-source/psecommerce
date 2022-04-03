@@ -2780,7 +2780,8 @@ if ( ! function_exists( 'mp_products_nav' ) ) :
 	 * @param bool $echo Optional, whether to echo. Defaults to true
 	 * @param WP_Query object $custom_query
 	 */
-	function mp_products_nav( $echo = true, $custom_query ) {
+	/*function mp_products_nav( $echo = true, $custom_query ) {*/ //PhP8 Deprecated
+		function mp_products_nav( $echo = true, $custom_query = null ) {
 		$html = '';
 
 		if ( $custom_query->max_num_pages > 1 ) {

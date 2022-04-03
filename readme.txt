@@ -66,6 +66,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 
 * PHP Deprecated:  implode() Fix
 * Fix: Setup-Wizard Falsche Fehlermeldung in den Standort-Einstellungen
+* PhP8 Fix Required parameter follows optional parameter
 
 = 1.5.4 = DerN3rd =
 

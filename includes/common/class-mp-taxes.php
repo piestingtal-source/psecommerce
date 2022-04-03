@@ -39,7 +39,8 @@ class MP_Taxes {
 	 *
 	 * @return array
 	 */
-	public function calculate( $price, $inclusive_tax = false, $applied_rates ) {
+	/*public function calculate( $price, $inclusive_tax = false, $applied_rates ) {*/ //PhP8 Deprecated
+		public function calculate( $price, $inclusive_tax = false, $applied_rates = null ) {
 		$taxes = array();
 		if ( $inclusive_tax ) {
 			$taxes = $this->calc_inclusive_taxes( $price, $applied_rates );
