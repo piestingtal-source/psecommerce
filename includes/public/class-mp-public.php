@@ -337,7 +337,7 @@ class MP_Public {
 		//Display styles for all pages
 		wp_enqueue_style( 'dashicons' );
 		wp_enqueue_style( 'jquery-ui', mp_plugin_url( 'ui/css/jquery-ui.min.css' ), false, MP_VERSION );
-		wp_enqueue_style( 'mp-select2', mp_plugin_url( 'ui/select2/select2.css' ), false, MP_VERSION );
+		wp_enqueue_style( 'mp-select2', mp_plugin_url( 'vendors/select2/select2.css' ), false, MP_VERSION );
 		wp_enqueue_style( 'mp-base', mp_plugin_url( 'ui/css/psecommerce.css' ), false, MP_VERSION );
 
 		$store_theme = mp_get_setting( 'store_theme' );
@@ -377,7 +377,7 @@ class MP_Public {
 
 		// JS
 		wp_register_script( 'hover-intent', mp_plugin_url( 'ui/js/hoverintent.min.js' ), array( 'jquery' ), MP_VERSION, true );
-		wp_register_script( 'mp-select2', mp_plugin_url( 'ui/select2/select2.min.js' ), array( 'jquery' ), MP_VERSION, true );
+		wp_register_script( 'mp-select2', mp_plugin_url( 'vendors/select2/select2.min.js' ), array( 'jquery' ), MP_VERSION, true );
 		wp_register_script( 'colorbox', mp_plugin_url( 'ui/js/jquery.colorbox-min.js' ), array( 'jquery' ), MP_VERSION, true );
 		wp_enqueue_script( 'mp-frontend', mp_plugin_url( 'ui/js/frontend.js' ), array(
 			'jquery-ui-tooltip',

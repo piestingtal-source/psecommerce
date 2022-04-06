@@ -223,7 +223,7 @@ class PSOURCE_Field_Taxonomy_Select extends PSOURCE_Field {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'psource-field-select2', PSOURCE_Metabox::class_url( 'ui/select2/select2.min.js' ), array( 'jquery' ), '3.4.8' );
+		wp_enqueue_script( 'psource-field-select2', mp_plugin_url( 'vendors/select2/select2.min.js' ), array( 'jquery' ), MP_VERSION );
 	}
 
 	/**
@@ -233,7 +233,7 @@ class PSOURCE_Field_Taxonomy_Select extends PSOURCE_Field {
 	 * @access public
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( 'psource-field-select2', PSOURCE_Metabox::class_url( 'ui/select2/select2.css' ), array(), '3.4.8' );
+		wp_enqueue_style( 'psource-field-select2', mp_plugin_url( 'vendors/select2/select2.css' ), array(), MP_VERSION );
 	}
 
 }

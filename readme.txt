@@ -73,6 +73,7 @@ Mehr Details auf der [Projektseite](https://n3rds.work/piestingtal_source/psecom
 * Fix: Setup-Wizard Falsche Fehlermeldung in den Standort-Einstellungen
 * PhP8 Fix Required parameter follows optional parameter
 * Fix: create_function
+* Anpassung am select2 js für leichteres Updaten -> Neu /vendors/select2/..
 
 = 1.5.4 = DerN3rd =
 
