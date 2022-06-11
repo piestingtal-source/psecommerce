@@ -12,7 +12,7 @@ if ( is_multisite() ) {
 			$widget_ops = array( 'classname'   => 'mp_global_category_list_widget',
 			                     'description' => __( "Zeigt eine netzwerkweite HTML-Liste der Produktkategorien aus PSeCommerce-Stores im Netzwerk an.", 'mp' )
 			);
-			parent::__construct( 'mp_global_category_list_widget', __( 'PSE Netzwerk-Kategorien', 'mp' ), $widget_ops );
+			parent::__construct( 'mp_global_category_list_widget', __( 'PSEC Netzwerk-Kategorien', 'mp' ), $widget_ops );
 		}
 
 		function widget( $args, $instance ) {

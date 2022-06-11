@@ -12,7 +12,7 @@ if ( is_multisite() ) {
 			$widget_ops = array( 'classname'   => 'mp_widget mp_global_tag_cloud_widget',
 			                     'description' => __( "Zeigt die weltweit am häufigsten verwendeten Produkt-Tags im Cloud-Format aus Netzwerk-PSeCommerce-Shops an.", 'mp' )
 			);
-			parent::__construct( 'mp_global_tag_cloud_widget', __( 'PSE Netzwerk-Tag-Cloud', 'mp' ), $widget_ops );
+			parent::__construct( 'mp_global_tag_cloud_widget', __( 'PSEC Netzwerk-Tag-Cloud', 'mp' ), $widget_ops );
 		}
 
 		function widget( $args, $instance ) {

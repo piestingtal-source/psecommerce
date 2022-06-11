@@ -199,7 +199,7 @@ class PSOURCE_Field_Images extends PSOURCE_Field {
 				foreach ( $values as $value ) {
 					$img_url = wp_get_attachment_image_src( $value, $this->args[ 'preview_size' ] );
 					?>
-					<div class="psource-image-field-preview"><a class="psource-image-field-edit dashicons dashicons-edit" href="#"></a><a class="psource-image-field-delete dashicons dashicons-trash" href="#"></a><img src="<?php echo $img_url[ 0 ] ??= 'default value'; ?>" alt="" data-image-id="<?php echo esc_attr( $value ); ?>" /></div>
+					<div class="psource-image-field-preview"><a class="psource-image-field-edit dashicons dashicons-edit" href="#"></a><a class="psource-image-field-delete dashicons dashicons-trash" href="#"></a><img src="<?php echo $img_url[ 0 ] /*??=*/ ?? 'default value'; ?>" alt="" data-image-id="<?php echo esc_attr( $value ); ?>" /></div>
 					<?php
 				}
 			}
